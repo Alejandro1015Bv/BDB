@@ -122,7 +122,7 @@ main {
 
 /* Pie de página */
 footer {
-    background-color: #025ab3;
+    background-color: #003366;
     color: white;
     text-align: center;
     padding: 25px;
@@ -132,21 +132,57 @@ footer p {
     margin: 0;
 }
 
-/* Responsividad para móviles */
+/* Media Queries para responsividad */
+
+/* Teléfonos y pantallas pequeñas */
 @media (max-width: 768px) {
-    .content-section {
-        flex-direction: column;
-        text-align: center;
+    header h1 {
+        font-size: 2em;
     }
-    .content-section.reverse {
+    header p {
+        font-size: 1em;
+    }
+    nav ul {
         flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+    nav a {
+        padding: 5px 10px;
+    }
+    .content-section, .content-section.reverse {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
     }
     .content-section img {
         width: 100%;
         max-width: none;
     }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .content-text h2 {
+        font-size: 1.8em;
+    }
+    .content-text p {
+        font-size: 1em;
+    }
+    .partitura-card img {
+        width: 100%;
+        height: auto;
+    }
+}
+/* Tablets y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content-section, .content-section.reverse {
+        gap: 20px;
+    }
+    .content-section img {
+        width: 45%;
+    }
+    .content-text h2 {
+        font-size: 2em;
+    }
+    .partitura-card img {
+        max-width: 80%;
     }
 }
