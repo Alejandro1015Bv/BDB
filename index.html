@@ -3,72 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banda Estudiantil Don Bosco</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Portal de Partituras - Banda Estudiantil</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Banda Estudiantil Don Bosco</h1>
-        <p>¡Donde la música y la pasión se unen!</p>
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="assets/logo-colegio.png" alt="Logo" class="logo">
+        </div>
+        
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="nav-link" data-url="inicio">Inicio</a></li>
+                <li><a href="#" class="nav-link" data-url="trompeta">Trompeta</a></li>
+                <li><a href="#" class="nav-link" data-url="bajo">Bajo</a></li>
+                <li><a href="#" class="nav-link" data-url="clarinete">Clarinete</a></li>
+                <li><a href="#" class="nav-link" data-url="saxofon">Saxofón</a></li>
+                <li><a href="#" class="nav-link btn-destacado" data-url="descargas">Descargas</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="saxofon.html">Saxofón</a></li>
-            <li><a href="clarinete.html">Clarinete</a></li>
-            <li><a href="bajo.html">Bajo y Trombón</a></li>
-            <li><a href="trompeta.html">Trompeta</a></li>
-            <li><a href="liras.html">Liras</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="content-section">
-            <img src="https://dupflxvhjogpoogbcjgl.supabase.co/storage/v1/object/public/partituras-bucket/images/Banda1.jpg" alt="Banda en desfile">
-            <div class="content-text">
-                <h2>Nuestra Misión y Visión</h2>
-                <p>Nuestra misión es fomentar la disciplina, el compañerismo y el amor por la música a través de la formación de una banda estudiantil de excelencia. Buscamos ser un referente cultural, inspirando a la comunidad a través de nuestras presentaciones y valores.</p>
-            </div>
-        </section>
-
-        <section class="content-section reverse">
-            <img src="https://dupflxvhjogpoogbcjgl.supabase.co/storage/v1/object/public/partituras-bucket/images/Banda2.jpg" alt="Integrantes de la banda practicando">
-            <div class="content-text">
-                <h2>Partituras para Todos los Músicos</h2>
-                <p>Este sitio web ha sido creado para nuestros integrantes. Aquí podrás acceder a todas las partituras organizadas por instrumento, lo que facilita la práctica y el aprendizaje. Explora nuestra colección y encuentra las piezas que necesitas para seguir mejorando.</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <img src="https://dupflxvhjogpoogbcjgl.supabase.co/storage/v1/object/public/partituras-bucket/images/Banda3.jpg" alt="Banda durante una ceremonia">
-            <div class="content-text">
-                <h2>Historia y Logros</h2>
-                <p>La banda estudiantil Don Bosco ha sido un pilar de la comunidad escolar por muchos años. Hemos participado en numerosos desfiles, concursos y eventos importantes, dejando siempre una impresión memorable. Cada miembro contribuye a nuestra rica historia y a los logros que nos enorgullecen.</p>
-            </div>
-        </section>
-
-        <section class="content-section reverse">
-            <img src="https://dupflxvhjogpoogbcjgl.supabase.co/storage/v1/object/public/partituras-bucket/images/Banda4.jpg" alt="Integrantes de la banda practicando">
-            <div class="content-text">
-                <h2>Ya me quede sin ideas carajo</h2>
-                <p>* Inserta texto *</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <img src="https://dupflxvhjogpoogbcjgl.supabase.co/storage/v1/object/public/partituras-bucket/images/Banda5.jpg" alt="Banda durante una ceremonia">
-            <div class="content-text">
-                <h2>Historia y Logros</h2>
-                <p>La banda estudiantil Don Bosco ha sido un pilar de la comunidad escolar por muchos años. Hemos participado en numerosos desfiles, concursos y eventos importantes, dejando siempre una impresión memorable. Cada miembro contribuye a nuestra rica historia y a los logros que nos enorgullecen.</p>
-            </div>
+    <main id="content">
+        <section class="hero">
+            <h1>Portal Musical Estudiantil</h1>
+            <p>Selecciona un instrumento para ver las partituras.</p>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Banda Estudiantil del Colegio Don Bosco. Todos los derechos reservados.</p>
-    </footer>
-
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

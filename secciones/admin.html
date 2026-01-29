@@ -1,0 +1,32 @@
+<section class="admin-panel">
+    <h2>Panel de Administración de Partituras</h2>
+    <p>Completa los datos para subir una nueva partitura al sistema.</p>
+
+    <form id="uploadForm" class="form-estilizado">
+        <label for="titulo">Nombre de la Obra:</label>
+        <input type="text" id="titulo" placeholder="Ej: Marcha Real" required>
+        
+        <label for="instrumento">Instrumento:</label>
+        <select id="instrumento" required>
+            <option value="">-- Selecciona --</option>
+            <option value="trompeta">Trompeta</option>
+            <option value="bajo">Bajo</option>
+            <option value="clarinete">Clarinete</option>
+            <option value="saxofon">Saxofón</option>
+        </select>
+
+        <label for="genero">Género Musical:</label>
+        <select id="genero" required>
+            <option value="">-- Selecciona --</option>
+            <option value="marcha">Música de Marcha</option>
+            <option value="bailable">Música Bailable</option>
+        </select>
+
+        <label for="file">Archivo PDF:</label>
+        <input type="file" id="file" accept=".pdf" required>
+
+        <button type="submit" id="btn-subir" class="btn-primario">Subir Partitura</button>
+    </form>
+    
+    <div id="status-message" style="margin-top: 20px; font-weight: bold;"></div>
+</section>
