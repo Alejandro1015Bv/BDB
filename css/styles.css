@@ -118,3 +118,25 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.filtros-descarga {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 20px;
+    background: var(--azul-primario);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: end;
+}
+.grupo-filtro label {
+    display: block;
+    margin: 5px 0;
+}
+.btn-pequeno {
+    font-size: 0.7rem;
+    background: var(--amarillo-acento);
+    border: none;
+    padding: 3px 7px;
+    cursor: pointer;
+    border-radius: 3px;
+}

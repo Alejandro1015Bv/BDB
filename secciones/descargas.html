@@ -1,3 +1,32 @@
-<h2>Centro de Descargas Global</h2>
-<p>Aquí puedes ver todas las piezas del repertorio de la banda.</p>
-<div id="lista-partituras" class="grid-partituras"></div>
+<section class="descargas-avanzadas">
+    <h2>Centro de Descargas Inteligente</h2>
+    
+    <div class="filtros-descarga">
+        <div class="grupo-filtro">
+            <h4>Instrumentos</h4>
+            <label><input type="checkbox" class="filtro-inst" value="trompeta"> Trompeta</label>
+            <label><input type="checkbox" class="filtro-inst" value="bajo"> Bajo</label>
+            <label><input type="checkbox" class="filtro-inst" value="clarinete"> Clarinete</label>
+            <label><input type="checkbox" class="filtro-inst" value="saxofon"> Saxofón</label>
+            <button class="btn-pequeno" onclick="seleccionarTodo('filtro-inst')">Todos</button>
+        </div>
+
+        <div class="grupo-filtro">
+            <h4>Categorías</h4>
+            <label><input type="checkbox" class="filtro-gen" value="marcha"> Marchas</label>
+            <label><input type="checkbox" class="filtro-gen" value="bailable"> Bailables</label>
+            <button class="btn-pequeno" onclick="seleccionarTodo('filtro-gen')">Todas</button>
+        </div>
+        
+        <button id="btn-aplicar-filtros" class="btn-primario">🔍 Buscar Partituras</button>
+    </div>
+
+    <div class="acciones-lote">
+        <button id="btn-descargar-seleccion" class="btn-destacado" style="display:none;">
+            Descargar Seleccionadas (PDF si > 3)
+        </button>
+    </div>
+
+    <div id="lista-partituras-descarga" class="grid-partituras">
+        </div>
+</section>
