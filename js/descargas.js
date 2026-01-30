@@ -91,3 +91,23 @@ function cargarImagen(url) {
         img.onload = () => resolve(img);
     });
 }
+
+// Función para inicializar la página de descargas
+export function inicializarDescargas() {
+    // Conectar el botón de búsqueda
+    const btnBuscar = document.getElementById('btn-buscar');
+    if (btnBuscar) {
+        btnBuscar.addEventListener('click', buscarPartiturasAvanzado);
+    }
+
+    // Conectar el botón de descarga
+    const btnDescarga = document.getElementById('btn-descarga-pro');
+    if (btnDescarga) {
+        btnDescarga.addEventListener('click', procesarDescarga);
+    }
+}
+
+// Inicializar eventos cuando se carga la página de descargas
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarDescargas();
+});

@@ -18,6 +18,9 @@ export async function cargarPartituras(instrumento, genero = 'todos') {
         <div class="card-partitura">
             <h3>${p.titulo}</h3>
             <p>Categoría: <strong>${p.genero}</strong></p>
+            <div class="partitura-imagen">
+                <img src="${p.archivo_url}" alt="${p.titulo}" style="max-width: 100%; height: auto;">
+            </div>
             <a href="${p.archivo_url}" target="_blank" class="btn-descargar">Ver / Descargar</a>
         </div>
     `).join('');

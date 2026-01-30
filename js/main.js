@@ -1,5 +1,7 @@
 import { cargarPartituras } from './display.js';
 import { inicializarFormularioSubida } from './upload.js';
+import { inicializarDescargas } from './descargas.js';
+import { inicializarAuth } from './auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
@@ -27,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // Si cargamos la página de subida o admin
+                if(seccion === 'admin') inicializarAuth();
                 if(seccion === 'subir' || seccion === 'admin') inicializarFormularioSubida();
+
+                // Si cargamos la página de descargas
+                if(seccion === 'descargas') inicializarDescargas();
                 
             } catch (err) {
                 content.innerHTML = "<h2>Error al cargar la sección</h2>";
