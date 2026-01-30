@@ -50,12 +50,21 @@ async function procesarDescarga() {
     if (seleccionados.length <= 3) {
         // DESCARGA JPG INDIVIDUAL
         alert("Descargando imágenes...");
-        seleccionados.forEach((check, index) => {
-            setTimeout(() => {
-                const link = document.createElement('a');
-                link.href = check.dataset.url;
-                link.download = `partitura_${index}.jpg`;
-                link.click();
+        seleccionados.forEach(async (check, index) => {
+            setTimeout(async () => {
+                try {
+                    const response = await fetch(check.dataset.url);
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = `partitura_${index + 1}.jpg`;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                } catch (error) {
+                    console.error('Error descargando imagen:', error);
+                    alert(`Error descargando partitura ${index + 1}`);
+                }
             }, index * 500); // Pequeño retraso para no bloquear el navegador
         });
     } else {
