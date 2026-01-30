@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     cargarPartituras(header.dataset.inst);
                 }
 
-                // Si cargamos la página de subida (aunque no esté en el menú)
-                if(seccion === 'subir') inicializarFormularioSubida();
+                // Si cargamos la página de subida o admin
+                if(seccion === 'subir' || seccion === 'admin') inicializarFormularioSubida();
                 
             } catch (err) {
                 content.innerHTML = "<h2>Error al cargar la sección</h2>";

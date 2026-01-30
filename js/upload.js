@@ -35,17 +35,17 @@ export function inicializarFormularioSubida() {
 
             // 3. Guardar en la Tabla SQL
             const { data, error: dbError } = await supabase
-  .from('partituras')
-  .insert([
-    { 
-      titulo: titulo, 
-      instrumento: instrumento, 
-      genero: genero, 
-      archivo_url: urlPublica 
-    }
-  ]);
+                .from('partituras')
+                .insert([
+                    {
+                        titulo: titulo,
+                        instrumento: instrumento,
+                        genero: genero,
+                        archivo_url: urlData.publicUrl
+                    }
+                ]);
 
-            if (dbErr) throw new Error("Error en Base de Datos: " + dbErr.message);
+            if (dbError) throw new Error("Error en Base de Datos: " + dbError.message);
 
             status.style.color = "green";
             status.innerText = "¡Éxito! La partitura se ha subido correctamente.";
@@ -61,13 +61,3 @@ export function inicializarFormularioSubida() {
         }
     });
 }
-const { data, error: dbError } = await supabase
-  .from('partituras')
-  .insert([
-    { 
-      titulo: titulo, 
-      instrumento: instrumento, 
-      genero: genero, 
-      archivo_url: urlPublica 
-    }
-  ]);
