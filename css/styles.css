@@ -165,3 +165,38 @@ body {
     height: 20px;
     cursor: pointer;
 }
+/* Secciones de Información */
+.info-banda {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-bottom: 4px solid var(--amarillo-acento);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    color: var(--azul-primario);
+    margin-top: 0;
+}
+
+/* Footer */
+.footer-banda {
+    background-color: var(--azul-primario);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.footer-banda strong {
+    color: var(--amarillo-acento);
+}

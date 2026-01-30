@@ -34,12 +34,16 @@ export function inicializarFormularioSubida() {
                 .getPublicUrl(fileName);
 
             // 3. Guardar en la Tabla SQL
-            const { error: dbErr } = await supabase.from('partituras').insert([{
-                titulo: titulo,
-                instrumento: instrumento,
-                genero: genero,
-                archivo_url: urlData.publicUrl
-            }]);
+            const { data, error: dbError } = await supabase
+  .from('partituras')
+  .insert([
+    { 
+      titulo: titulo, 
+      instrumento: instrumento, 
+      genero: genero, 
+      archivo_url: urlPublica 
+    }
+  ]);
 
             if (dbErr) throw new Error("Error en Base de Datos: " + dbErr.message);
 
@@ -57,3 +61,13 @@ export function inicializarFormularioSubida() {
         }
     });
 }
+const { data, error: dbError } = await supabase
+  .from('partituras')
+  .insert([
+    { 
+      titulo: titulo, 
+      instrumento: instrumento, 
+      genero: genero, 
+      archivo_url: urlPublica 
+    }
+  ]);
