@@ -3,30 +3,36 @@
     
     <div class="filtros-descarga">
         <div class="grupo-filtro">
-            <h4>Instrumentos</h4>
-            <label><input type="checkbox" class="filtro-inst" value="trompeta"> Trompeta</label>
-            <label><input type="checkbox" class="filtro-inst" value="bajo"> Bajo</label>
-            <label><input type="checkbox" class="filtro-inst" value="clarinete"> Clarinete</label>
-            <label><input type="checkbox" class="filtro-inst" value="saxofon"> Saxofón</label>
-            <button class="btn-pequeno" onclick="seleccionarTodo('filtro-inst')">Todos</button>
+            <h4>1. Instrumentos</h4>
+            <div class="checkbox-group">
+                <label><input type="checkbox" class="filtro-inst" value="trompeta"> Trompeta</label>
+                <label><input type="checkbox" class="filtro-inst" value="bajo"> Bajo</label>
+                <label><input type="checkbox" class="filtro-inst" value="clarinete"> Clarinete</label>
+                <label><input type="checkbox" class="filtro-inst" value="saxofon"> Saxofón</label>
+            </div>
+            <button class="btn-pequeno" onclick="marcarTodos('filtro-inst')">Seleccionar Todos</button>
         </div>
 
         <div class="grupo-filtro">
-            <h4>Categorías</h4>
-            <label><input type="checkbox" class="filtro-gen" value="marcha"> Marchas</label>
-            <label><input type="checkbox" class="filtro-gen" value="bailable"> Bailables</label>
-            <button class="btn-pequeno" onclick="seleccionarTodo('filtro-gen')">Todas</button>
+            <h4>2. Categorías</h4>
+            <div class="checkbox-group">
+                <label><input type="checkbox" class="filtro-gen" value="marcha"> Marchas</label>
+                <label><input type="checkbox" class="filtro-gen" value="bailable"> Bailables</label>
+            </div>
+            <button class="btn-pequeno" onclick="marcarTodos('filtro-gen')">Seleccionar Todas</button>
         </div>
         
-        <button id="btn-aplicar-filtros" class="btn-primario">🔍 Buscar Partituras</button>
+        <button id="btn-buscar" class="btn-primario">🔍 Buscar Partituras</button>
     </div>
 
-    <div class="acciones-lote">
-        <button id="btn-descargar-seleccion" class="btn-destacado" style="display:none;">
-            Descargar Seleccionadas (PDF si > 3)
-        </button>
+    <div class="control-resultados" style="margin-top: 20px; display: none;" id="panel-acciones">
+        <div class="info-seleccion">
+            <button class="btn-pequeno" onclick="marcarTodos('check-partitura')">Seleccionar Todos los Resultados</button>
+            <span id="contador-seleccion">0 seleccionadas</span>
+        </div>
+        <button id="btn-descarga-pro" class="btn-destacado">Descargar Selección (JPG o PDF)</button>
     </div>
 
-    <div id="lista-partituras-descarga" class="grid-partituras">
+    <div id="lista-resultados" class="grid-partituras">
         </div>
 </section>

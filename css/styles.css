@@ -140,3 +140,28 @@ body {
     cursor: pointer;
     border-radius: 3px;
 }
+.control-resultados {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eef2f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-partitura {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.check-partitura {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
