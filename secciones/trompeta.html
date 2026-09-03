@@ -1,7 +1,41 @@
-<h2 data-inst="trompeta">Partituras de Trompeta</h2>
-<div class="filter-container">
-    <button class="btn-filter" onclick="ejecutarFiltro('todos')">Todas</button>
-    <button class="btn-filter" onclick="ejecutarFiltro('marcha')">Marchas</button>
-    <button class="btn-filter" onclick="ejecutarFiltro('bailable')">Bailables</button>
-</div>
-<div id="lista-partituras" class="grid-partituras"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trompeta - Banda Estudiantil</title>
+  <link rel="icon" href="../assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="../assets/logo-colegio.png" alt="Logo Colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="trompeta.html" class="nav-btn active">Trompeta</a></li>
+      <li><a href="bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
+      <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+    </ul>
+  </nav>
+
+  <main class="container animate__animated animate__fadeIn">
+    <h2 class="page-title">Partituras para Trompeta</h2>
+    <div id="partituras-container" class="grid-cards" data-seccion="trompeta">
+      <p style="text-align: center; grid-column: 1/-1;">Cargando partituras...</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/display.js"></script>
+</body>
+</html>

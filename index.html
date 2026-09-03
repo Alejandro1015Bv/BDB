@@ -1,55 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Partituras - Banda Estudiantil</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de partituras, repertorio y recursos de la Banda Estudiantil.">
+  <title>Banda Estudiantil | Portal Musical</title>
+  <link rel="icon" href="assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
 
-    <header class="navbar">
-        <div class="logo-container">
-            <img src="assets/logo-colegio.png" alt="Logo" class="logo">
+<body class="home-page">
+
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="assets/logo-colegio.png" alt="Logo del colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-btn active">Inicio</a></li>
+      <li><a href="secciones/clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="secciones/saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="secciones/trompeta.html" class="nav-btn">Trompeta</a></li>
+      <li><a href="secciones/bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="secciones/liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="secciones/descargas.html" class="nav-btn">Descargas</a></li>
+      <li><a href="secciones/admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <section class="home-hero animate__animated animate__fadeIn">
+      <div class="hero-copy">
+        <div class="hero-kicker">Portal Musical · Banda Estudiantil</div>
+        <h1 class="hero-title">Donde cada <span>nota</span> encuentra su lugar.</h1>
+        <p class="hero-lead">
+          Un espacio digital para organizar el repertorio, facilitar el estudio y mantener
+          viva la identidad musical de nuestra banda. Partituras, recursos y material de apoyo,
+          reunidos en un solo lugar.
+        </p>
+        <div class="hero-actions">
+          <a href="secciones/descargas.html" class="home-btn primary">Explorar repertorio</a>
+          <a href="#identidad" class="home-btn secondary">Conocer nuestra banda</a>
         </div>
-        
-        <nav class="menu">
-            <ul>
-                <li><a href="#" class="nav-link" data-url="inicio">Inicio</a></li>
-                <li><a href="#" class="nav-link" data-url="trompeta">Trompeta</a></li>
-                <li><a href="#" class="nav-link" data-url="bajo">Bajo</a></li>
-                <li><a href="#" class="nav-link" data-url="clarinete">Clarinete</a></li>
-                <li><a href="#" class="nav-link" data-url="saxofon">Saxofón</a></li>
-                <li><a href="#" class="nav-link btn-destacado" data-url="admin">Admin</a></li>
-                <li><a href="#" class="nav-link btn-destacado" data-url="descargas">Descargas</a></li>
-            </ul>
-        </nav>
-    </header>
+      </div>
 
-    <main id="content">
-        <section class="hero">
-            <h1>Portal Musical Estudiantil</h1>
-            <p>Gestiona y descarga tus partituras en un solo lugar.</p>
-        </section>
+      <div class="hero-emblem">
+        <div class="hero-medallion">
+          <img src="assets/logo-colegio.png" alt="Emblema de la Banda Estudiantil">
+        </div>
+        <div class="hero-note">🎼 Música · Disciplina · Comunidad</div>
+      </div>
+    </section>
 
-        <section class="info-banda">
-            <div class="info-card">
-                <h3>Nuestra Misión</h3>
-                <p>Fomentar la excelencia musical en los estudiantes, proporcionando herramientas digitales que faciliten el acceso al material de estudio y fortalezcan el sentido de pertenencia a la banda.</p>
-            </div>
-            <div class="info-card">
-                <h3>Nuestra Visión</h3>
-                <p>Ser el repositorio digital referente para bandas estudiantiles, promoviendo la organización y el crecimiento artístico a través de la tecnología.</p>
-            </div>
-        </section>
-    </main>
+    <section id="identidad" class="home-section">
+      <div class="section-heading">
+        <span class="section-eyebrow">Nuestra identidad</span>
+        <h2>Una banda que representa mucho más que música</h2>
+        <p>
+          La banda es un punto de encuentro entre estudiantes, profesores y comunidad.
+          Estas definiciones son editables y pueden adaptarse a la historia real de la institución.
+        </p>
+      </div>
 
-    <script type="module" src="js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <div class="identity-grid">
+        <article class="identity-card">
+          <div class="identity-icon">V</div>
+          <h3>Visión</h3>
+          <p>
+            Ser una banda estudiantil reconocida por su excelencia musical, disciplina y capacidad
+            de inspirar a nuevas generaciones, llevando nuestra identidad institucional a cada
+            presentación y escenario.
+          </p>
+        </article>
 
-<footer class="footer-banda">
-    <p>&copy; 2024 Todos los derechos reservados.</p>
-    <p>Desarrollado por <strong>Alejandro Angulo</strong> Ingeniero Informático</p>
-</footer>
+        <article class="identity-card">
+          <div class="identity-icon">M</div>
+          <h3>Misión</h3>
+          <p>
+            Formar jóvenes a través de la música, fortaleciendo el compromiso, el trabajo en equipo
+            y la expresión artística mediante una preparación constante y un repertorio organizado,
+            accesible y de calidad.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-heading">
+        <span class="section-eyebrow">Lo que nos mueve</span>
+        <h2>Valores de nuestra banda</h2>
+        <p>Una buena interpretación comienza mucho antes de subir al escenario.</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card"><strong>Disciplina</strong><span>Constancia y preparación para mejorar cada ensayo.</span></div>
+        <div class="value-card"><strong>Compañerismo</strong><span>Escucharnos y apoyarnos para construir un sonido conjunto.</span></div>
+        <div class="value-card"><strong>Excelencia</strong><span>Buscar siempre una interpretación mejor que la anterior.</span></div>
+        <div class="value-card"><strong>Identidad</strong><span>Representar con orgullo a nuestra institución y comunidad.</span></div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="home-stats">
+        <div class="stat"><strong>5</strong><span>Secciones instrumentales</span></div>
+        <div class="stat"><strong>1</strong><span>Archivo musical centralizado</span></div>
+        <div class="stat"><strong>∞</strong><span>Posibilidades para aprender</span></div>
+        <div class="stat"><strong>100%</strong><span>Espíritu de equipo</span></div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-heading">
+        <span class="section-eyebrow">Explora</span>
+        <h2>El repertorio de cada sección</h2>
+        <p>Accede directamente a las partituras y recursos de tu instrumento.</p>
+      </div>
+
+      <div class="instrument-grid">
+        <a href="secciones/clarinete.html" class="instrument-card"><span class="instrument-number">01</span><strong>Clarinete</strong><small>Líneas melódicas y ejercicios.</small></a>
+        <a href="secciones/saxofon.html" class="instrument-card"><span class="instrument-number">02</span><strong>Saxofón</strong><small>Altos, tenores y repertorio.</small></a>
+        <a href="secciones/trompeta.html" class="instrument-card"><span class="instrument-number">03</span><strong>Trompeta</strong><small>Melodías, llamadas y guías rítmicas.</small></a>
+        <a href="secciones/bajo.html" class="instrument-card"><span class="instrument-number">04</span><strong>Bajo / Trombon</strong><small>Base armónica y soporte musical.</small></a>
+        <a href="secciones/liras.html" class="instrument-card"><span class="instrument-number">05</span><strong>Liras</strong><small>Repertorio melódico y placas.</small></a>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="home-quote">
+        <p>“Una banda no toca solamente al mismo tiempo; aprende a respirar, escuchar y avanzar como una sola.”</p>
+        <small>— Lema propuesto para la Banda Estudiantil</small>
+      </div>
+    </section>
+
+    <section class="home-cta">
+      <div>
+        <h2>¿Buscas una partitura?</h2>
+        <p>Consulta el archivo general y encuentra rápidamente el material que necesitas.</p>
+      </div>
+      <a href="secciones/descargas.html" class="home-btn secondary">Ir al archivo musical</a>
+    </section>
+
+  </main>
+
+  <footer class="home-footer">
+    <p>© 2026 Banda Estudiantil · Portal de Partituras y Recursos Musicales</p>
+  </footer>
+
 </body>
 </html>

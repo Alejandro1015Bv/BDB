@@ -1,47 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - Banda Estudiantil</title>
+  <link rel="icon" href="../assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
 
-<section id="login-section" class="admin-panel">
-    <h2>Iniciar Sesión - Panel de Administración</h2>
-    <form id="loginForm" class="form-estilizado">
-        <label for="password">Contraseña de Administrador:</label>
-        <input type="password" id="password" placeholder="Ingresa la contraseña" required>
+    <!-- Modal de Autenticación -->
+<div id="auth-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+  <div style="background: #fff; padding: 30px; border-radius: 12px; text-align: center; max-width: 350px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <h3 style="margin-top: 0; color: #1a2a3a;">Acceso Restringido</h3>
+    <p style="color: #666; font-size: 14px;">Ingresa la clave de administrador:</p>
+    <input type="password" id="auth-pin" placeholder="Contraseña" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; text-align: center; font-size: 18px;" />
+    <button id="auth-btn" style="width: 100%; padding: 10px; background-color: #2b50aa; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Ingresar</button>
+    <p id="auth-error" style="color: red; font-size: 13px; margin-top: 10px; display: none;">Contraseña incorrecta</p>
+  </div>
+</div>
 
-        <button type="submit" class="btn-primario">Iniciar Sesión</button>
-    </form>
-    <div id="login-message" style="margin-top: 20px; font-weight: bold;"></div>
-</section>
-
-<section id="admin-panel" class="admin-panel" style="display: none;">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2>Panel de Administración de Partituras</h2>
-        <button id="btn-logout" class="btn-pequeno" style="background: #dc3545; color: white;">Cerrar Sesión</button>
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="../assets/logo-colegio.png" alt="Logo Colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
     </div>
-    <p>Completa los datos para subir una nueva partitura al sistema.</p>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="trompeta.html" class="nav-btn">Trompeta</a></li>
+      <li><a href="bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
+      <li><a href="admin.html" class="nav-btn nav-admin active">Panel Profesor</a></li>
+    </ul>
+  </nav>
 
-    <form id="uploadForm" class="form-estilizado">
-        <label for="titulo">Nombre de la Obra:</label>
-        <input type="text" id="titulo" placeholder="Ej: Marcha Real" required>
+  <main class="container animate__animated animate__fadeIn">
+    <h2 class="page-title">SUBIR NUEVA PARTITURA Y AUDIO</h2>
 
-        <label for="instrumento">Instrumento:</label>
-        <select id="instrumento" required>
-            <option value="">-- Selecciona --</option>
-            <option value="trompeta">Trompeta</option>
-            <option value="bajo">Bajo</option>
-            <option value="clarinete">Clarinete</option>
-            <option value="saxofon">Saxofón</option>
+    <form id="upload-form" class="neu-form">
+      <div class="form-group">
+        <label for="titulo">Título de la Canción / Marcha:</label>
+        <input type="text" id="titulo" class="neu-input" placeholder="Ej. Niña Camba" required>
+      </div>
+
+      <div class="form-group">
+        <label for="seccion">Sección o Instrumento:</label>
+        <select id="seccion" class="neu-select" required>
+          <option value="" disabled selected>Selecciona una sección</option>
+          <option value="clarinete">Clarinete</option>
+          <option value="saxofon">Saxofón</option>
+          <option value="trompeta">Trompeta</option>
+          <option value="bajo">Bajo / Trombon</option>
+          <option value="liras">Liras</option>
         </select>
+      </div>
 
-        <label for="genero">Género Musical:</label>
-        <select id="genero" required>
-            <option value="">-- Selecciona --</option>
-            <option value="marcha">Música de Marcha</option>
-            <option value="bailable">Música Bailable</option>
+      <!-- Selector de Géneros con opción de agregar nuevo -->
+      <div class="form-group">
+        <label for="genero-select">Género / Ritmo:</label>
+        <select id="genero-select" class="neu-select" required>
+          <option value="" disabled selected>Cargando géneros...</option>
         </select>
+      </div>
 
-        <label for="file">Archivo:</label>
-        <input type="file" id="file" accept="image/jpeg, image/jpg" required>
+      <div class="form-group" id="group-nuevo-genero" style="display: none;">
+        <label for="nuevo-genero">Escribe el nuevo Género / Ritmo:</label>
+        <input type="text" id="nuevo-genero" class="neu-input" placeholder="Ej. Rock, Balada">
+      </div>
 
-        <button type="submit" id="btn-subir" class="btn-primario">Subir Partitura</button>
+      <div class="form-group">
+        <label for="partitura-file">Archivo de Partitura (PDF o Imagen PNG/JPG):</label>
+        <input type="file" id="partitura-file" class="neu-input" accept="application/pdf,image/png,image/jpeg,image/jpg" required>
+      </div>
+
+      <div class="form-group">
+        <label for="audio-file">Audio de Referencia (MP3/WAV) - Opcional:</label>
+        <input type="file" id="audio-file" class="neu-input" accept="audio/*">
+      </div>
+
+      <button type="submit" id="btn-submit" class="btn-pdf">Subir Material</button>
+      <div id="status-message" style="text-align: center; font-weight: bold; margin-top: 10px;"></div>
     </form>
+  </main>
 
-    <div id="status-message" style="margin-top: 20px; font-weight: bold;"></div>
-</section>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/generos.js"></script>
+  <script src="../js/upload.js"></script>
+
+<script>
+  // Cambia aquí tu contraseña de administrador fácilmente:
+  const ADMIN_PIN = "19503236";
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('auth-overlay');
+    const pinInput = document.getElementById('auth-pin');
+    const authBtn = document.getElementById('auth-btn');
+    const authError = document.getElementById('auth-error');
+
+    function validarAcceso() {
+      if (pinInput.value === ADMIN_PIN) {
+        overlay.style.display = 'none';
+      } else {
+        authError.style.display = 'block';
+        pinInput.value = '';
+        pinInput.focus();
+      }
+    }
+
+    authBtn.addEventListener('click', validarAcceso);
+    pinInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') validarAcceso();
+    });
+  });
+</script>
+
+</body>
+</html>

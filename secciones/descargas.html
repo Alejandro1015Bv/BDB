@@ -1,38 +1,77 @@
-<section class="descargas-avanzadas">
-    <h2>Centro de Descargas Inteligente</h2>
-    
-    <div class="filtros-descarga">
-        <div class="grupo-filtro">
-            <h4>1. Instrumentos</h4>
-            <div class="checkbox-group">
-                <label><input type="checkbox" class="filtro-inst" value="trompeta"> Trompeta</label>
-                <label><input type="checkbox" class="filtro-inst" value="bajo"> Bajo</label>
-                <label><input type="checkbox" class="filtro-inst" value="clarinete"> Clarinete</label>
-                <label><input type="checkbox" class="filtro-inst" value="saxofon"> Saxofón</label>
-            </div>
-            <button class="btn-pequeno" onclick="marcarTodos('filtro-inst')">Seleccionar Todos</button>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargas General - Banda Estudiantil</title>
+  <link rel="icon" href="../assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="../assets/logo-colegio.png" alt="Logo Colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="trompeta.html" class="nav-btn">Trompeta</a></li>
+      <li><a href="bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="descargas.html" class="nav-btn active">Descargas</a></li>
+      <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+    </ul>
+  </nav>
+
+  <main class="container animate__animated animate__fadeIn">
+    <h2 class="page-title">Catálogo General de Descargas</h2>
+
+    <!-- Seccion de Buscador y Filtros integrados -->
+    <div class="filtros-container" style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 25px;">
+      
+      <!-- Campo de Búsqueda por Texto -->
+      <div style="margin-bottom: 15px;">
+        <label for="search-input" style="display:block; font-weight:bold; margin-bottom:5px; color:#2b50aa;">Buscar:</label>
+        <input type="search" id="search-input" placeholder="🔍 Buscar por título de canción o marcha..." autocomplete="off" style="width:100%; padding:10px 12px; border-radius:6px; border:1px solid #ccc; font-size:15px; box-sizing:border-box; outline:none;">
+      </div>
+
+      <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+        <!-- Filtro por Instrumento (columna 'seccion' en Supabase) -->
+        <div style="flex: 1; min-width: 200px;">
+          <label for="filtro-instrumento" style="display: block; font-weight: bold; margin-bottom: 5px; color: #2b50aa;">Filtrar por Instrumento:</label>
+          <select id="filtro-instrumento" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+            <option value="TODOS">Todos los instrumentos</option>
+          </select>
         </div>
 
-        <div class="grupo-filtro">
-            <h4>2. Categorías</h4>
-            <div class="checkbox-group">
-                <label><input type="checkbox" class="filtro-gen" value="marcha"> Marchas</label>
-                <label><input type="checkbox" class="filtro-gen" value="bailable"> Bailables</label>
-            </div>
-            <button class="btn-pequeno" onclick="marcarTodos('filtro-gen')">Seleccionar Todas</button>
+        <!-- Filtro por Género / Ritmo (columna 'genero' en Supabase) -->
+        <div style="flex: 1; min-width: 200px;">
+          <label for="filtro-genero" style="display: block; font-weight: bold; margin-bottom: 5px; color: #2b50aa;">Filtrar por Género / Ritmo:</label>
+          <select id="filtro-genero" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+            <option value="TODOS">Todos los géneros</option>
+          </select>
         </div>
-        
-        <button id="btn-buscar" class="btn-primario">🔍 Buscar Partituras</button>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:15px;">
+        <span id="contador-resultados" style="font-weight:bold; color:#555;">Cargando resultados...</span>
+        <button type="button" id="btn-limpiar-filtros" class="btn-pdf">↺ Limpiar filtros</button>
+      </div>
+
     </div>
 
-    <div class="control-resultados" style="margin-top: 20px; display: none;" id="panel-acciones">
-        <div class="info-seleccion">
-            <button class="btn-pequeno" onclick="marcarTodos('check-partitura')">Seleccionar Todos los Resultados</button>
-            <span id="contador-seleccion">0 seleccionadas</span>
-        </div>
-        <button id="btn-descarga-pro" class="btn-destacado">Descargar Selección (JPG o PDF)</button>
+    <!-- Contenedor general de partituras -->
+    <div id="partituras-container" class="grid-cards" data-seccion="todas">
+      <p style="text-align: center; grid-column: 1/-1;">Cargando catálogo completo de descargas...</p>
     </div>
+  </main>
 
-    <div id="lista-resultados" class="grid-partituras">
-        </div>
-</section>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="../js/display.js"></script>
+</body>
+</html>
