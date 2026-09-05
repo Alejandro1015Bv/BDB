@@ -11,6 +11,8 @@
   
   --text-dark: #1F2937;
   --text-light: #FFFFFF;
+  --text-muted: #6b7280;
+  --surface: #FFFFFF;
 
   /* Sombras Neumórficas */
   --neu-cream-flat: 6px 6px 16px rgba(0, 0, 0, 0.08), -6px -6px 16px rgba(255, 255, 255, 0.9);
@@ -122,7 +124,7 @@ body {
 
 /* FORMULARIOS Y TARJETAS */
 .neu-form {
-  background: #FFFFFF;
+  background: var(--surface);
   padding: 30px;
   border-radius: 25px;
   box-shadow: var(--neu-cream-flat);
@@ -185,7 +187,7 @@ body {
 }
 
 .sheet-card {
-  background: #FFFFFF;
+  background: var(--surface);
   padding: 22px;
   border-radius: 20px;
   box-shadow: var(--neu-cream-flat);
@@ -325,7 +327,7 @@ body {
 .values-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:18px; }
 .value-card { padding:25px 20px;text-align:center;border-radius:22px;background:var(--bg-main);box-shadow:var(--neu-cream-flat); }
 .value-card strong { display:block;color:var(--color-berries-dark);margin-bottom:8px; }
-.value-card span { color:#6b7280;font-size:.92rem;line-height:1.5; }
+.value-card span { color:var(--text-muted);font-size:.92rem;line-height:1.5; }
 .instrument-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:16px; }
 .instrument-card {
   min-height:145px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;
@@ -335,7 +337,7 @@ body {
 .instrument-card:hover { transform:translateY(-4px);color:var(--color-berries); }
 .instrument-number { font-size:.78rem;font-weight:900;opacity:.55; }
 .instrument-card strong { font-size:1.1rem; }
-.instrument-card small { color:#6b7280;line-height:1.4; }
+.instrument-card small { color:var(--text-muted);line-height:1.4; }
 .home-stats {
   display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:25px;border-radius:27px;
   background:var(--color-berries);box-shadow:var(--neu-berries-flat);
@@ -390,7 +392,7 @@ body {
   z-index: 9999; padding: 20px;
 }
 .auth-box {
-  background: #fff;
+  background: var(--surface);
   padding: 34px 30px;
   border-radius: 24px;
   text-align: center;
@@ -399,7 +401,7 @@ body {
   box-shadow: var(--neu-cream-flat);
 }
 .auth-box h3 { color: var(--color-berries-dark); margin-bottom: 6px; }
-.auth-box p { color: #6b7280; font-size: 0.9rem; margin-bottom: 18px; }
+.auth-box p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 18px; }
 .auth-box .form-group { text-align: left; margin-bottom: 14px; }
 .auth-error {
   color: #c62828; font-size: 0.85rem; margin-top: 10px; display: none;
@@ -409,9 +411,9 @@ body {
   display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 10px; margin-bottom: 25px;
 }
-.session-bar span { color: #6b7280; font-size: 0.9rem; }
+.session-bar span { color: var(--text-muted); font-size: 0.9rem; }
 .btn-logout {
-  background: #fff; color: var(--color-berries);
+  background: var(--surface); color: var(--color-berries);
   border: none; padding: 8px 16px; border-radius: 10px;
   box-shadow: var(--neu-cream-flat); cursor: pointer; font-weight: 700;
 }
@@ -439,7 +441,7 @@ body {
   gap: 18px;
 }
 .student-item {
-  background: #fff;
+  background: var(--surface);
   border-radius: 20px;
   padding: 18px;
   box-shadow: var(--neu-cream-flat);
@@ -453,7 +455,7 @@ body {
   flex-shrink: 0; background: var(--bg-main);
 }
 .student-item h4 { color: var(--color-berries-dark); font-size: 1rem; }
-.student-item small { color: #6b7280; display: block; }
+.student-item small { color: var(--text-muted); display: block; }
 .student-item-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .student-item-actions button {
   flex: 1; min-width: 90px; font-size: 0.82rem; padding: 8px 10px;
@@ -465,7 +467,7 @@ body {
 /* --- Tarjeta de credencial (para PDF / vista previa) --- */
 .credential-card {
   width: 340px;
-  background: #fff;
+  background: var(--surface);
   border-radius: 22px;
   padding: 22px;
   box-shadow: var(--neu-cream-flat);
@@ -477,14 +479,14 @@ body {
   border: 3px solid var(--color-berries);
 }
 .credential-card .cred-name { font-weight: 800; color: var(--color-berries-dark); text-align: center; }
-.credential-card .cred-meta { font-size: 0.82rem; color: #6b7280; text-align: center; }
+.credential-card .cred-meta { font-size: 0.82rem; color: var(--text-muted); text-align: center; }
 .credential-card .cred-qr { width: 130px; height: 130px; margin-top: 6px; }
 .credential-card .cred-brand { font-size: 0.72rem; color: var(--color-berries); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
 
 /* --- Kiosko de asistencia --- */
 .kiosk-wrap {
   max-width: 480px; margin: 0 auto;
-  background: #fff; border-radius: 28px; padding: 30px;
+  background: var(--surface); border-radius: 28px; padding: 30px;
   box-shadow: var(--neu-cream-flat);
   display: flex; flex-direction: column; align-items: center; gap: 18px;
 }
@@ -501,7 +503,7 @@ body {
   width: 100%; display: none; flex-direction: column; gap: 12px;
 }
 .kiosk-pin-input {
-  letter-spacing: 10px; text-align: center; font-size: 1.4rem;
+  letter-spacing: 3px; text-align: center; font-size: 1.3rem;
 }
 .kiosk-result {
   width: 100%; border-radius: 20px; padding: 24px;
@@ -518,17 +520,17 @@ body {
 }
 .kiosk-result h3 { color: var(--color-berries-dark); }
 .kiosk-result .kiosk-icon { font-size: 2.4rem; }
-.kiosk-result small { color: #6b7280; }
+.kiosk-result small { color: var(--text-muted); }
 
 /* --- Panel de asistencias del profesor --- */
 .attendance-filters {
   display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end;
-  background: #fff; padding: 20px; border-radius: 20px;
+  background: var(--surface); padding: 20px; border-radius: 20px;
   box-shadow: var(--neu-cream-flat); margin-bottom: 22px;
 }
 .attendance-filters .form-group { min-width: 180px; margin-bottom: 0; }
 .table-wrap {
-  background: #fff; border-radius: 20px; padding: 10px;
+  background: var(--surface); border-radius: 20px; padding: 10px;
   box-shadow: var(--neu-cream-flat); overflow-x: auto;
 }
 table.attendance-table { width: 100%; border-collapse: collapse; min-width: 600px; }
@@ -547,4 +549,97 @@ table.attendance-table { width: 100%; border-collapse: collapse; min-width: 600p
 @media (max-width: 640px) {
   .credential-card { width: 100%; }
   .photo-upload-row { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   MODO OSCURO
+   ============================================================ */
+[data-theme="dark"] {
+  --bg-main: #1a1d24;
+  --surface: #242832;
+  --text-dark: #E5E7EB;
+  --text-muted: #9aa3b2;
+  --neu-cream-flat: 6px 6px 16px rgba(0, 0, 0, 0.5), -6px -6px 16px rgba(255, 255, 255, 0.03);
+  --neu-cream-pressed: inset 4px 4px 8px rgba(0, 0, 0, 0.5), inset -4px -4px 8px rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="dark"] body { background-color: var(--bg-main); }
+
+[data-theme="dark"] .hero-lead,
+[data-theme="dark"] .section-heading p,
+[data-theme="dark"] .identity-card p,
+[data-theme="dark"] .home-quote small,
+[data-theme="dark"] .home-footer {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .nav-admin { background-color: var(--surface); color: var(--color-cream-light); }
+[data-theme="dark"] .nav-admin:hover { background-color: #2d323e; }
+
+[data-theme="dark"] .attendance-table th, [data-theme="dark"] .attendance-table td {
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+[data-theme="dark"] .kiosk-result.ok { background: #123a24; }
+[data-theme="dark"] .kiosk-result.duplicate { background: #3a3210; }
+[data-theme="dark"] .kiosk-result.error { background: #3a1414; }
+[data-theme="dark"] .status-badge.qr { background: #1f2c4d; }
+[data-theme="dark"] .status-badge.pin { background: #4d3f0a; color: #f5d97a; }
+[data-theme="dark"] .btn-eliminar { background: #4a1f1f; color: #ff8080; }
+[data-theme="dark"] .auth-error { color: #ff6b6b; }
+[data-theme="dark"] .toast { border: 1px solid rgba(255,255,255,0.06); }
+
+/* Botón interruptor de tema (sol/luna) en la barra de navegación */
+.theme-toggle {
+  background: var(--color-cream);
+  color: var(--color-berries-dark);
+  border: none;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.theme-toggle:hover { transform: scale(1.08); }
+
+/* ============================================================
+   NOTIFICACIONES TOAST (reemplazan los alert() del navegador)
+   ============================================================ */
+#toast-contenedor {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 340px;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  color: var(--text-dark);
+  padding: 14px 16px;
+  border-radius: 14px;
+  box-shadow: var(--neu-cream-flat);
+  font-size: 0.9rem;
+  border-left: 5px solid #999;
+}
+.toast-exito { border-left-color: #2e7d32; }
+.toast-error { border-left-color: #c62828; }
+.toast-info { border-left-color: var(--color-berries); }
+.toast-advertencia { border-left-color: #d68000; }
+.toast-icono { font-size: 1.1rem; flex-shrink: 0; }
+.toast-texto { flex: 1; }
+.toast-cerrar {
+  background: none; border: none; cursor: pointer; font-size: 1.2rem;
+  color: var(--text-muted); line-height: 1; padding: 0;
+}
+
+@media (max-width: 480px) {
+  #toast-contenedor { left: 16px; right: 16px; max-width: none; bottom: 16px; }
 }

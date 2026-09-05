@@ -109,7 +109,7 @@ function exportarExcel() {
   const filtrados = filtrarPorTexto();
 
   if (!filtrados.length) {
-    alert('No hay registros para exportar con los filtros actuales.');
+    mostrarToast('No hay registros para exportar con los filtros actuales.', 'advertencia');
     return;
   }
 
@@ -133,4 +133,5 @@ function exportarExcel() {
   const inicio = document.getElementById('filtro-fecha-inicio').value;
   const fin = document.getElementById('filtro-fecha-fin').value;
   XLSX.writeFile(wb, `Asistencias_${inicio}_a_${fin}.xlsx`);
+  mostrarToast('Archivo Excel descargado.', 'exito');
 }

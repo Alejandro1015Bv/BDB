@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script src="../js/tema.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestión de Estudiantes - Banda Estudiantil</title>
@@ -25,6 +26,7 @@
       <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
       <li><a href="asistencia.html" class="nav-btn">Asistencia</a></li>
       <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+      <li><button type="button" class="theme-toggle" onclick="alternarTema()" aria-label="Cambiar modo claro/oscuro">🌙</button></li>
     </ul>
   </nav>
 
@@ -40,6 +42,10 @@
     <h2 class="page-title">Registro de Estudiantes</h2>
 
     <form id="form-estudiante" class="neu-form">
+      <div id="banner-editando" style="display:none; background:var(--color-cream); color:var(--color-berries-dark); padding:10px 16px; border-radius:12px; font-weight:700; justify-content:space-between; align-items:center; gap:10px;">
+        <span id="banner-editando-texto">Editando estudiante</span>
+        <button type="button" id="btn-cancelar-edicion" class="btn-logout" style="padding:4px 12px;">Cancelar</button>
+      </div>
       <div class="photo-upload-row">
         <img id="foto-preview" class="photo-preview" src="../assets/logo-colegio.png" alt="Vista previa">
         <div class="form-group" style="flex:1;">
@@ -49,8 +55,13 @@
       </div>
 
       <div class="form-group">
-        <label for="nombre_completo">Nombre completo:</label>
-        <input type="text" id="nombre_completo" class="neu-input" placeholder="Ej. Ana María Rojas Vega" required>
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" class="neu-input" placeholder="Ej. Ana María" required>
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" class="neu-input" placeholder="Ej. Rojas Vega" required>
       </div>
 
       <div class="form-group">
@@ -93,6 +104,8 @@
   <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@2.0.4/dist/qrcode.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <script src="../js/teacher-auth.js"></script>
+  <script src="../js/toast.js"></script>
+  <script src="../js/confirmar-eliminacion.js"></script>
   <script src="../js/credenciales.js"></script>
   <script src="../js/estudiantes.js"></script>
 </body>

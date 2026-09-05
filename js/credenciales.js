@@ -114,6 +114,12 @@ async function dibujarCredencial(estudiante) {
   const nivelTxt = NIVEL_LABEL[estudiante.nivel] || estudiante.nivel || '';
   ctx.fillText(`${estudiante.curso || ''} · ${nivelTxt} · Sección ${estudiante.seccion || ''}`, centroX, yNombre + 15);
 
+  // N° de Registro (visible en la credencial -- también forma parte del PIN)
+  ctx.font = 'bold 22px Segoe UI, Arial';
+  ctx.fillStyle = '#3959A2';
+  ctx.fillText(`N° Registro: ${estudiante.numero_registro || '—'}`, centroX, yNombre + 50);
+  yNombre += 35;
+
   // QR (librería qrcode-generator: API síncrona, no usa promesas)
   const qr = qrcode(0, 'M'); // 0 = detectar tamaño automáticamente, 'M' = corrección de errores media
   qr.addData(estudiante.codigo_qr);

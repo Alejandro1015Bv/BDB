@@ -76,11 +76,11 @@ async function marcarConPin() {
   const estudiante_id = mapaNombreId[nombreInput.value];
 
   if (!estudiante_id) {
-    alert('Selecciona tu nombre de la lista de sugerencias.');
+    mostrarToast('Selecciona tu nombre de la lista de sugerencias.', 'advertencia');
     return;
   }
-  if (!/^\d{4}$/.test(pinInput.value)) {
-    alert('El PIN debe tener 4 dígitos.');
+  if (!/^[A-Za-z]{2}\d{5}$/.test(pinInput.value)) {
+    mostrarToast('El PIN debe tener 2 letras y 5 números (ej: Ag00042).', 'advertencia');
     return;
   }
 

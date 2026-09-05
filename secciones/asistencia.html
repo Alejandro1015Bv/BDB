@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script src="../js/tema.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marcar Asistencia - Banda Estudiantil</title>
@@ -25,6 +26,7 @@
       <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
       <li><a href="asistencia.html" class="nav-btn active">Asistencia</a></li>
       <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+      <li><button type="button" class="theme-toggle" onclick="alternarTema()" aria-label="Cambiar modo claro/oscuro">🌙</button></li>
     </ul>
   </nav>
 
@@ -49,8 +51,8 @@
           <datalist id="lista-nombres"></datalist>
         </div>
         <div class="form-group">
-          <label for="fallback-pin">PIN (4 dígitos):</label>
-          <input type="password" id="fallback-pin" class="neu-input kiosk-pin-input" maxlength="4" inputmode="numeric" placeholder="••••">
+          <label for="fallback-pin">PIN (2 letras + 5 números, ej: Ag00042):</label>
+          <input type="password" id="fallback-pin" class="neu-input kiosk-pin-input" maxlength="7" placeholder="Ej: Ag00042">
         </div>
         <button type="button" id="btn-marcar-pin" class="btn-pdf">Marcar con PIN</button>
       </div>
@@ -68,6 +70,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/supabase-config.js"></script>
   <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="../js/toast.js"></script>
   <script src="../js/asistencia.js"></script>
 </body>
 </html>

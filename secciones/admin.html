@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script src="../js/tema.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel de Administración - Banda Estudiantil</title>
@@ -36,6 +37,7 @@
       <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
       <li><a href="asistencia.html" class="nav-btn">Asistencia</a></li>
           <li><a href="admin.html" class="nav-btn nav-admin active">Panel Profesor</a></li>
+      <li><button type="button" class="theme-toggle" onclick="alternarTema()" aria-label="Cambiar modo claro/oscuro">🌙</button></li>
     </ul>
   </nav>
 
@@ -43,7 +45,7 @@
     <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:30px;">
       <a href="estudiantes.html" class="btn-pdf">🧑‍🎓 Gestionar Estudiantes</a>
       <a href="panel-asistencias.html" class="btn-pdf">📋 Ver Registro de Asistencias</a>
-      <a href="asistencia.html" class="btn-pdf">📷 Abrir Kiosko de Asistencia</a>
+      <a href="asistencia.html" class="btn-pdf">📷 Abrir Marcado de Asistencia</a>
     </div>
 
     <h2 class="page-title">SUBIR NUEVA PARTITURA Y AUDIO</h2>
@@ -92,12 +94,20 @@
       <button type="submit" id="btn-submit" class="btn-pdf">Subir Material</button>
       <div id="status-message" style="text-align: center; font-weight: bold; margin-top: 10px;"></div>
     </form>
+
+    <h2 class="page-title" style="margin-top:50px;">Partituras Existentes</h2>
+    <div id="lista-partituras-admin" class="student-list">
+      <p style="text-align:center; grid-column:1/-1;">Cargando partituras...</p>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../js/supabase-config.js"></script>
   <script src="../js/generos.js"></script>
   <script src="../js/upload.js"></script>
+  <script src="../js/toast.js"></script>
+  <script src="../js/confirmar-eliminacion.js"></script>
+  <script src="../js/gestionar-partituras.js"></script>
 
 <script>
   // Cambia aquí tu contraseña de administrador fácilmente:
