@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Estudiantes - Banda Estudiantil</title>
+  <link rel="icon" href="../assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="../assets/logo-colegio.png" alt="Logo Colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="trompeta.html" class="nav-btn">Trompeta</a></li>
+      <li><a href="bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
+      <li><a href="asistencia.html" class="nav-btn">Asistencia</a></li>
+      <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+    </ul>
+  </nav>
+
+  <main class="container animate__animated animate__fadeIn" id="pagina-contenido" style="display:none;">
+    <div class="session-bar">
+      <span>Sesión: <strong id="sesion-email"></strong></span>
+      <div style="display:flex; gap:10px;">
+        <a href="panel-asistencias.html" class="btn-pdf">Ver Asistencias →</a>
+        <button type="button" class="btn-logout" onclick="cerrarSesionProfesor()">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <h2 class="page-title">Registro de Estudiantes</h2>
+
+    <form id="form-estudiante" class="neu-form">
+      <div class="photo-upload-row">
+        <img id="foto-preview" class="photo-preview" src="../assets/logo-colegio.png" alt="Vista previa">
+        <div class="form-group" style="flex:1;">
+          <label for="foto-input">Foto del estudiante:</label>
+          <input type="file" id="foto-input" class="neu-input" accept="image/png,image/jpeg,image/jpg">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nombre_completo">Nombre completo:</label>
+        <input type="text" id="nombre_completo" class="neu-input" placeholder="Ej. Ana María Rojas Vega" required>
+      </div>
+
+      <div class="form-group">
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" class="neu-input" placeholder="Ej. 5to de Secundaria" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nivel">Nivel:</label>
+        <select id="nivel" class="neu-select" required>
+          <option value="" disabled selected>Selecciona un nivel</option>
+          <option value="primaria">Primaria</option>
+          <option value="secundaria">Secundaria</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="seccion">Sección (paralelo):</label>
+        <input type="text" id="seccion" class="neu-input" placeholder="Ej. A" required>
+      </div>
+
+      <button type="submit" id="btn-guardar" class="btn-pdf">Registrar Estudiante</button>
+      <div id="status-message" style="text-align:center; font-weight:bold;"></div>
+    </form>
+
+    <div class="bulk-actions">
+      <button type="button" id="btn-todas-credenciales" class="btn-pdf">🪪 Descargar Todas las Credenciales (PDF)</button>
+    </div>
+
+    <div id="lista-estudiantes" class="student-list">
+      <p style="text-align:center; grid-column:1/-1;">Cargando estudiantes...</p>
+    </div>
+  </main>
+
+  <!-- Tarjeta oculta usada como plantilla para dibujar credenciales -->
+  <canvas id="canvas-credencial" width="640" height="960" style="display:none;"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@2.0.4/dist/qrcode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="../js/teacher-auth.js"></script>
+  <script src="../js/credenciales.js"></script>
+  <script src="../js/estudiantes.js"></script>
+</body>
+</html>

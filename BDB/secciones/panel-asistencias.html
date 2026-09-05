@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Asistencias - Banda Estudiantil</title>
+  <link rel="icon" href="../assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="../assets/logo-colegio.png" alt="Logo Colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="trompeta.html" class="nav-btn">Trompeta</a></li>
+      <li><a href="bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
+      <li><a href="asistencia.html" class="nav-btn">Asistencia</a></li>
+      <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+    </ul>
+  </nav>
+
+  <main class="container animate__animated animate__fadeIn" id="pagina-contenido" style="display:none;">
+    <div class="session-bar">
+      <span>Sesión: <strong id="sesion-email"></strong></span>
+      <div style="display:flex; gap:10px;">
+        <a href="estudiantes.html" class="btn-pdf">Gestionar Estudiantes →</a>
+        <button type="button" class="btn-logout" onclick="cerrarSesionProfesor()">Cerrar Sesión</button>
+      </div>
+    </div>
+
+    <h2 class="page-title">Registro de Asistencias</h2>
+
+    <div class="attendance-filters">
+      <div class="form-group">
+        <label for="filtro-fecha-inicio">Desde:</label>
+        <input type="date" id="filtro-fecha-inicio" class="neu-input">
+      </div>
+      <div class="form-group">
+        <label for="filtro-fecha-fin">Hasta:</label>
+        <input type="date" id="filtro-fecha-fin" class="neu-input">
+      </div>
+      <div class="form-group" style="flex:1;">
+        <label for="filtro-buscar">Buscar por nombre:</label>
+        <input type="search" id="filtro-buscar" class="neu-input" placeholder="Nombre del estudiante...">
+      </div>
+      <button type="button" id="btn-filtrar" class="btn-pdf">Filtrar</button>
+      <button type="button" id="btn-exportar" class="btn-pdf">📊 Exportar a Excel</button>
+    </div>
+
+    <p id="contador-registros" style="color:#6b7280; margin-bottom:12px;"></p>
+
+    <div class="table-wrap">
+      <table class="attendance-table" id="tabla-asistencias">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Curso</th>
+            <th>Nivel</th>
+            <th>Sección</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Método</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="7" style="text-align:center;">Cargando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="../js/teacher-auth.js"></script>
+  <script src="../js/panel-asistencias.js"></script>
+</body>
+</html>

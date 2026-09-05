@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcar Asistencia - Banda Estudiantil</title>
+  <link rel="icon" href="../assets/logo-colegio.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar animate__animated animate__fadeInDown">
+    <div class="nav-brand">
+      <img src="../assets/logo-colegio.png" alt="Logo Colegio" class="nav-logo">
+      <span class="nav-title">Banda Estudiantil</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="clarinete.html" class="nav-btn">Clarinete</a></li>
+      <li><a href="saxofon.html" class="nav-btn">Saxofón</a></li>
+      <li><a href="trompeta.html" class="nav-btn">Trompeta</a></li>
+      <li><a href="bajo.html" class="nav-btn">Bajo / Trombon</a></li>
+      <li><a href="liras.html" class="nav-btn">Liras</a></li>
+      <li><a href="descargas.html" class="nav-btn">Descargas</a></li>
+      <li><a href="asistencia.html" class="nav-btn active">Asistencia</a></li>
+      <li><a href="admin.html" class="nav-btn nav-admin">Panel Profesor</a></li>
+    </ul>
+  </nav>
+
+  <main class="container animate__animated animate__fadeIn">
+    <h2 class="page-title">Marcar Asistencia</h2>
+    <p style="text-align:center; color:#6b7280; max-width:480px; margin:-15px auto 25px;">
+      Escanea el código QR de tu credencial. Este dispositivo debe estar a cargo del profesor.
+    </p>
+
+    <div class="kiosk-wrap">
+      <div id="qr-reader"></div>
+      <p id="camara-error" style="color:#c62828; display:none; text-align:center; font-size:0.9rem;"></p>
+
+      <button type="button" class="kiosk-toggle" id="btn-mostrar-fallback">
+        ¿No tienes tu credencial? Márcala con tu nombre y PIN
+      </button>
+
+      <div class="kiosk-fallback" id="kiosk-fallback">
+        <div class="form-group">
+          <label for="fallback-nombre">Busca tu nombre:</label>
+          <input type="text" id="fallback-nombre" class="neu-input" list="lista-nombres" placeholder="Escribe tu nombre...">
+          <datalist id="lista-nombres"></datalist>
+        </div>
+        <div class="form-group">
+          <label for="fallback-pin">PIN (4 dígitos):</label>
+          <input type="password" id="fallback-pin" class="neu-input kiosk-pin-input" maxlength="4" inputmode="numeric" placeholder="••••">
+        </div>
+        <button type="button" id="btn-marcar-pin" class="btn-pdf">Marcar con PIN</button>
+      </div>
+
+      <div class="kiosk-result" id="kiosk-result">
+        <span class="kiosk-icon" id="kiosk-icon"></span>
+        <img id="kiosk-foto" class="kiosk-photo" src="" alt="" style="display:none;">
+        <h3 id="kiosk-nombre"></h3>
+        <small id="kiosk-meta"></small>
+        <small id="kiosk-hora"></small>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-config.js"></script>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <script src="../js/asistencia.js"></script>
+</body>
+</html>
